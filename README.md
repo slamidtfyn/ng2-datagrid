@@ -1,1 +1,1 @@
-### Angular Starter Plunker - Typescript
+### Angular Data Grid
