@@ -1,5 +1,16 @@
 import { Component, NgModule, OnInit, OnChanges } from '@angular/core'
 import { Http } from '@angular/http';
+
+interface line
+{
+Bilag:number;
+Navn:string;
+Konto:string;
+Debet:number;
+Kredit:number;
+
+}
+
 @Component({
   selector: 'sl-grid',
   templateUrl: 'src/grid.template.htm'
@@ -11,15 +22,18 @@ export class GridComponent implements OnInit, OnChanges {
   cols = 1;
   pos = { row: 0, col: 0 }
   coldef = [
-    { name: "A", type: "number", required: true },
-    { name: "B", type: "text" },
-    { name: "C", type: "text" }]
+    { name: "Bilag", type: "number", required: true },
+    { name: "Navn", type: "text",required:true },
+    { name: "Konto", type: "text",required:true },
+    { name: "Debet", type: "number" },
+    { name: "Kredit", type: "number" }
+    ]
   constructor(private http: Http) {
 
   }
 
   ngOnInit() {
-    this.rows = [{ A: null, B: null }];
+    this.rows = [{Bilag:1,Navn:"Bilag 1",Konto:"1000" }];
     this.cols = this.coldef.length - 1;
   }
 
@@ -32,14 +46,28 @@ export class GridComponent implements OnInit, OnChanges {
   }
 
   deleteRow() {
-    this.rows.splice(this.pos.row - 1, 1);
+    this.rows.splice(this.pos.row, 1);
     if (this.pos.row >= this.rows.length) this.pos.row--;
     if (this.pos.row < 0) this.pos.row = 0;
+    this.move();
   }
 
   addRow() {
+const current:line=this.rows[this.pos.row];
+const bilag=this.rows.filter(p=>p.Bilag==current.Bilag);
+var debit:number=0;
+bilag.filter((p:line)=>p.Debet).forEach((value:any)=> {
+  
+  debit+=parseFloat(value.Debet)});
+var credit:number=0;
+bilag.filter((p:line)=>p.Kredit).forEach((value:line)=>credit+=value.Kredit);
+    console.log("Debet "+debit);
+    console.log("Kredit "+credit);
 
-    this.rows.push({ A: null, B: null });
+ if(debit==credit)
+  this.rows.push({ Bilag:current.Bilag+1});
+ else
+    this.rows.push({ Bilag:current.Bilag,Navn:current.Navn  });
     this.pos.row = this.rows.length - 1;
     this.pos.col = 0;
     this.move();
