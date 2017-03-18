@@ -1,0 +1,10 @@
+/* Styles go here */
+
+input.ng-invalid, select.ng-invalid, .ng-invalid-required, .ng-invalid.required {
+    border-left: 5px solid #E03930;
+  }
+ 
+ 
+ input.ng-valid, select.ng-valid, .ng-valid-required, .ng-valid.required {
+    border-left: 5px solid #57A83F;
+  }
