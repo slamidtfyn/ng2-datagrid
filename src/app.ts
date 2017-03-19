@@ -5,6 +5,8 @@ import {FocusedDirective} from './focused.directive'
 import {GridComponent} from './grid'
 import { FormsModule }   from '@angular/forms';
 import { HttpModule} from '@angular/http';
+import { MaterialModule } from '@angular/material';
+import 'hammerjs';
 
 @Component({
   selector: 'my-app',
@@ -22,7 +24,7 @@ export class App implements OnInit  {
 }
 
 @NgModule({
-  imports: [ BrowserModule,FormsModule,HttpModule ],
+  imports: [ BrowserModule,FormsModule,HttpModule,MaterialModule ],
   declarations: [ App,FocusedDirective,GridComponent ],
   bootstrap: [ App ]
 })

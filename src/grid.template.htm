@@ -1,20 +1,30 @@
- <p>Use arrows to move around in grid</p>
-  <button (click)="addRow()">Press ctrl-shift-a to add row</button>
-  <button (click)="deleteRow()">Press ctrl-shift-s to delete row</button>
-  <form >
-  <table border="1" (keydown)="keydown($event)">
-    <tr>
-      <th></th>
-      <th *ngFor="let h of coldef">{{h.name}}</th>
-    </tr>
-    <tr *ngFor="let x of rows; let i = index" (change)="ch($event)" (click)="pos.row=i" >
-      <td width="50px">{{i}}</td>
-      <td *ngFor="let y of coldef; let z = index"><input class="form-control" [required]="y.required?true:null"  [ngModelOptions]="{standalone: true}"  [(ngModel)]="x[y.name]"  [type]="y.type"  [pos]="pos" [row]="i" [col]="z"></td>
-      
-    </tr>
-    </table>
-    </form>
-  
-    <pre>
+<p>Use arrows to move around in grid</p>
+
+<button md-raised-button (click)="addRow()">Press ctrl-shift-a to add row</button>
+<button md-raised-button (click)="deleteRow()">Press ctrl-shift-s to delete row</button>
+<form>
+  <table border="1" (keydown)="keydown($event)" >
+    <thead>
+      <tr>
+        <th></th>
+        <th *ngFor="let h of coldef">{{h.name}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let x of rows; let i = index" (change)="ch($event)" (click)="pos.row=i">
+        <td width="50px">{{i}}</td>
+        <td *ngFor="let y of coldef; let z = index">
+          <md-input-container>
+            <input mdInput  [required]="y.required?true:null" [ngModelOptions]="{standalone: true}" [(ngModel)]="x[y.name]" [type]="y.type"
+              [pos]="pos" [row]="i" [col]="z" >
+          </md-input-container>
+        </td>
+
+      </tr>
+    </tbody>
+  </table>
+</form>
+
+<pre>
     {{log|json}}
    </pre>

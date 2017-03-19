@@ -1,4 +1,7 @@
-import {Directive, Input, Renderer, ElementRef,OnChanges} from '@angular/core'
+import {Directive, Input,
+   Renderer, 
+   ElementRef,
+   OnChanges} from '@angular/core'
 
 
 @Directive({
@@ -12,7 +15,7 @@ export class FocusedDirective implements OnChanges {
  
   ngOnChanges(x)
   {
-    
+    console.log(x);
     if(this.pos && this.pos.col==this.col && this.pos.row==this.row){
       
       this.elementRef.nativeElement.focus();

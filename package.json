@@ -1,0 +1,19 @@
+{
+  "name": "angulardatagrid",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/slamidtfyn/ng2-datagrid.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/slamidtfyn/ng2-datagrid/issues"
+  },
+  "homepage": "https://github.com/slamidtfyn/ng2-datagrid#readme"
+}

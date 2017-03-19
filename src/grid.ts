@@ -13,7 +13,10 @@ Kredit:number;
 
 @Component({
   selector: 'sl-grid',
-  templateUrl: 'src/grid.template.htm'
+  templateUrl: 'src/grid.template.htm',
+  styles:[`
+  .mat-input-wrapper {margin:0px}
+  `]
 })
 export class GridComponent implements OnInit, OnChanges {
 

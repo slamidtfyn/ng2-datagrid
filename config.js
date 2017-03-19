@@ -21,6 +21,7 @@ System.config({
     '@angular/http': 'npm:@angular/http/bundles/http.umd.js',
     '@angular/router': 'npm:@angular/router/bundles/router.umd.js',
     '@angular/forms': 'npm:@angular/forms/bundles/forms.umd.js',
+    '@angular/material': 'npm:@angular/material/bundles/material.umd.js',
     
     '@angular/core/testing': 'npm:@angular/core/bundles/core-testing.umd.js',
     '@angular/common/testing': 'npm:@angular/common/bundles/common-testing.umd.js',
@@ -31,6 +32,7 @@ System.config({
     '@angular/router/testing': 'npm:@angular/router/bundles/router-testing.umd.js',
     
     'rxjs': 'npm:rxjs',
+    'hammerjs': 'npm:hammerjs',
     'typescript': 'npm:typescript@2.0.2/lib/typescript.js'
   },
   //packages defines our app package
