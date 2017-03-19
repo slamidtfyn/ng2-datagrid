@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.html",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "start": "npm run open",
+    "open": "concurrently \"nodemon server.js\" \"opn http://localhost:8080\"",
+    "go": "concurrently \"nodemon server.js\"",
+    "br": "concurrently \"opn http://localhost:8080\""
   },
   "repository": {
     "type": "git",
@@ -17,6 +21,15 @@
   },
   "homepage": "https://github.com/slamidtfyn/ng2-datagrid#readme",
   "dependencies": {
-    "express": "^4.15.2"
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "node-storage": "0.0.7"
+  },
+  "devDependencies": {
+    "concurrently": "^3.4.0",
+    "live-server": "^1.2.0",
+    "nodemon": "^1.11.0",
+    "opn": "^4.0.2",
+    "opn-cli": "^3.1.0"
   }
 }
